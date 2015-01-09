@@ -79,12 +79,12 @@ function slickc_load_images($attributes) {
 	$output = '';
 	while ($loop->have_posts()) {
 		$loop->the_post();
-        $image = get_the_post_thumbnail(get_the_ID());
+        $image = get_the_post_thumbnail(get_the_ID(), 'full');
 		if (!empty($image)) {
 			$post_id = get_the_ID();
 			$title = get_the_title();
 			$content = get_the_excerpt();;
-			$image_src = wp_get_attachment_image_src(get_post_thumbnail_id());
+			$image_src = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
 			$image_src = $image_src[0];
 			$url = get_post_meta(get_the_ID(), 'slickc_image_url');
 			$images[] = array(
@@ -117,7 +117,10 @@ function slickc_frontend($attributes) {
             $linkstart = '';
             $linkend = '';
             if ($image['url']) {
-                $linkstart = '<a href="' . $image['url'] . '"';
+                $linkstart = '<a href="' . $image['url'] . '" ';
+                if ($image['image_url_openblank']) {
+                    $linkstart .= 'target="_blank" ';
+                }
                 $linkstart .= '>';
                 $linkend = '</a>';
             }

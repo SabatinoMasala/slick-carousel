@@ -38,7 +38,7 @@ function slickc_columns_content($column_name, $post_ID) {
 }
 
 // Extra admin field for image URL
-function slickc_image_url(){
+function slickc_image_url() {
 	global $post;
 	$custom = get_post_custom($post->ID);
 	$slickc_image_url = isset($custom['slickc_image_url']) ?  $custom['slickc_image_url'][0] : '';
@@ -51,18 +51,18 @@ function slickc_image_url(){
 	<?php
 }
 function slickc_admin_init_custpost() {
-	add_meta_box("slickc_image_url", "Image Link URL", "slickc_image_url", "slickc", "side", "low");
+	add_meta_box('slickc_image_url', 'Image Link URL', 'slickc_image_url', 'slickc', 'side', 'low');
 }
 
 function slickc_mb_save_details() {
 	global $post;
 	if (isset($_POST['slickc_image_url'])) {
 		$openblank = 0;
-		if (isset($_POST['slickc_image_url_openblank']) && ($_POST['slickc_image_url_openblank'] == '1')) {
+		if (isset($_POST['slickc_image_url_openblank']) && ($_POST['slickc_image_url_openblank'] === '1')) {
 			$openblank = 1;
 		}
-		update_post_meta($post->ID, "slickc_image_url", esc_url($_POST["slickc_image_url"]));
-		update_post_meta($post->ID, "slickc_image_url_openblank", $openblank);
+		update_post_meta($post->ID, 'slickc_image_url', esc_url($_POST['slickc_image_url']));
+		update_post_meta($post->ID, 'slickc_image_url_openblank', $openblank);
 	}
 }
 
