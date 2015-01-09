@@ -1,0 +1,3 @@
+[submodule "deps/slick"]
+	path = deps/slick
+	url = https://github.com/kenwheeler/slick.git
