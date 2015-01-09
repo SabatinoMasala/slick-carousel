@@ -97,6 +97,7 @@ function slickc_load_images($attributes) {
                 'image' => $image,
                 'img_src' => $image_src,
                 'url' => esc_url($url[0]),
+                'open_blank' => $url_openblank,
             );
 		}
 	}
@@ -121,7 +122,7 @@ function slickc_frontend($attributes) {
             $linkend = '';
             if ($image['url']) {
                 $linkstart = '<a href="' . $image['url'] . '" ';
-                if ($image['image_url_openblank']) {
+                if ($image['open_blank']) {
                     $linkstart .= 'target="_blank" ';
                 }
                 $linkstart .= '>';
