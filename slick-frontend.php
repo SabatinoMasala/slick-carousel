@@ -97,7 +97,7 @@ function slickc_load_images($attributes) {
                 'image' => $image,
                 'img_src' => $image_src,
                 'url' => esc_url($url[0]),
-                'open_blank' => $url_openblank,
+                'open_blank' => $url_openblank[0],
             );
 		}
 	}
