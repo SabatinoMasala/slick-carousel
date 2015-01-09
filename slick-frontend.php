@@ -89,6 +89,7 @@ function slickc_load_images($attributes) {
 			$image_src = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
 			$image_src = $image_src[0];
 			$url = get_post_meta(get_the_ID(), 'slickc_image_url');
+            $url_openblank = get_post_meta(get_the_ID(), 'slickc_image_url_openblank')
 			$images[] = array(
                 'post_id' => $post_id,
                 'title' => $title,
