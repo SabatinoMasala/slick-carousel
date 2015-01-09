@@ -597,6 +597,8 @@ class SlickC_SettingsPage {
                 case 'easing':
                 case 'lazyLoad':
                 case 'respondTo':
+                case 'orderby':
+                case 'order':
                     $cleaned[$key] = sanitize_text_field($value);
                     break;
                 /* html */

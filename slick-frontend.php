@@ -35,6 +35,8 @@ function slickc_write_options($attributes) {
             case 'prevArrow':
             case 'nextArrow':
             case 'id':
+            case 'orderby':
+            case 'order':
                 if (!empty($value)) {
                     $options[$key] = $value;
                 }
