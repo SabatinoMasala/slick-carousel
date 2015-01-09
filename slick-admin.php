@@ -66,73 +66,7 @@ function slickc_mb_save_details() {
 	}
 }
 
-
-
-///////////////////
-// CONTEXTUAL HELP
-///////////////////
-function slickc_contextual_help_tab() {
-    $screen = get_current_screen();
-    if ($screen->post_type === 'slickc') {
-        $help = '<p>You can add a <strong>Slick carousel</strong> image carousel using the shortcode <code>[slick-carousel]</code>.</p>
-                <p>You can read the full plugin documentation on the <a href="http://github.com/surevine/slick-carousel/" target="_blank">plugin home page</a></p>
-                <p>Most settings can be changed in the <a href="">settings page</a> but you can also specify options for individual carousels
-                using the following settings:</p>
-		
-                <ul>
-                <li><code>interval</code> <em>(default 5000)</em>
-                <ul>
-                <li>Length of time for the caption to pause on each image. Time in milliseconds.</li>
-                </ul></li>
-			
-                <li><code>showcaption</code> <em>(default true)</em>
-                <ul>
-                <li>Whether to display the text caption on each image or not. true or false.</li>
-                </ul></li>
-			
-                <li><code>showcontrols</code> <em>(default true)</em>
-                <ul>
-                <li>Whether to display the control arrows or not. true or false.</li>
-                </ul></li>
-			
-                <li><code>orderby</code> and <code>order</code> <em>(default menu_order ASC)</em>
-                <ul>
-                <li>What order to display the posts in. Uses WP_Query terms.</li>
-                </ul></li>
-			
-                <li><code>category</code> <em>(default all)</em>
-                <ul>
-                <li>Filter carousel items by a comma separated list of carousel category slugs.</li>
-                </ul></li>
-			
-                <li><code>image_size</code> <em>(default full)</em>
-                <ul>
-                <li>WordPress image size to use, useful for small carousels</li>
-                </ul></li>
-			
-                <li><code>id</code> <em>(default all)</em>
-                <ul>
-                <li>Specify the ID of a specific carousel post to display only one image.</li>';
-        if (isset($_GET['post'])){
-            $help .= '<li>The ID of the post you\'re currently editing is <strong>' .
-                $_GET['post'] .
-                '</strong></li>';
-        }
-        $help .= '
-            </ul></li>
-        </ul>
-        ';
-        $screen->add_help_tab(array(
-            'id' => 'slickc_contextual_help',
-            'title' => __('Slick Carousel'),
-            'content' => __($help)
-         ));
-      }
-    }
-
 add_filter('manage_slickc_posts_columns', 'slickc_columns_head');  
 add_action('manage_slickc_posts_custom_column', 'slickc_columns_content', 10, 2);
 add_action('save_post', 'slickc_mb_save_details');
 add_action('add_meta_boxes', 'slickc_admin_init_custpost');
-add_action('load-post.php', 'slickc_contextual_help_tab');
-add_action('load-post-new.php', 'slickc_contextual_help_tab');
