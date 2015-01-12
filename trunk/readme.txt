@@ -1,5 +1,9 @@
-Slick carousel
-======================
+=== Slick carousel ===
+Contributors: lloydwatkin
+Tags: carousel, slick
+Requires at least: 4.0.0
+Stable tag: trunk
+License: MIT
 
 A carousel plugin for Wordpress. Makes use of the [Slick](https://kenwheeler.github.io/slick/) carousel library.
 
