@@ -1,5 +1,4 @@
 === Slick carousel ===
-
 Contributors: lloydwatkin
 Tags: carousel, slick
 Requires at least: 4.0.0
