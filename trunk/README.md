@@ -8,6 +8,11 @@ License: MIT
 
 A carousel plugin for Wordpress. Makes use of the [Slick](https://kenwheeler.github.io/slick/) carousel library.
 
+Changelog for this fork
+-----------------
+
+Added support for the editor, which gets rendered in a content tag.
+
 Shortcode Options
 -----------------
 
