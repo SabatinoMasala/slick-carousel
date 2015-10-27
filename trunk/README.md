@@ -11,7 +11,9 @@ A carousel plugin for Wordpress. Makes use of the [Slick](https://kenwheeler.git
 Changelog for this fork
 -----------------
 
-Added support for the editor, which gets rendered in a content tag.
+Added support for the post editor, which gets rendered in a content tag.
+
+![Image of the carousel](https://raw.githubusercontent.com/SabatinoMasala/slick-carousel/master/github/example_1.png)
 
 Shortcode Options
 -----------------
