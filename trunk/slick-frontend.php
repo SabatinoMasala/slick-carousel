@@ -53,11 +53,13 @@ function slickc_write_options($attributes) {
 function slickc_load_slick_dependencies() {
     wp_enqueue_style(
         'slick-carousel-styles',
-        plugins_url('deps/slick/slick/slick.css', __FILE__)
+        //plugins_url('deps/slick/slick/slick.css', __FILE__)
+        '//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.css'
     );
     wp_enqueue_script(
        'slick-carousel-script',
-        plugins_url('deps/slick/slick/slick.min.js', __FILE__)
+        //plugins_url('deps/slick/slick/slick.min.js', __FILE__)
+       '//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js'
     );
 }
 
@@ -88,12 +90,14 @@ function slickc_load_images($attributes) {
 			$content = get_the_excerpt();;
 			$image_src = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
 			$image_src = $image_src[0];
-			$url = get_post_meta(get_the_ID(), 'slickc_image_url');
+            $url = get_post_meta(get_the_ID(), 'slickc_image_url');
+			$post = get_post()->post_content;
             $url_openblank = get_post_meta(get_the_ID(), 'slickc_image_url_openblank');
 			$images[] = array(
                 'post_id' => $post_id,
                 'title' => $title,
                 'content' => $content,
+                'post' => $post,
                 'image' => $image,
                 'img_src' => $image_src,
                 'url' => esc_url($url[0]),
@@ -117,6 +121,9 @@ function slickc_frontend($attributes) {
     <div id="slickc_<?php echo $id ?>">
         <?php foreach ($images as $key => $image) : ?>
             <div>
+            <div class="content">
+                <?php echo wpautop($image['post']) ?>
+            </div>
             <?php
             $linkstart = '';
             $linkend = '';

@@ -51,7 +51,7 @@ function slickc_image_url() {
 	<?php
 }
 function slickc_admin_init_custpost() {
-	add_meta_box('slickc_image_url', 'Image Link URL', 'slickc_image_url', 'slickc', 'side', 'low');
+	add_meta_box('slickc_image_url', 'Image Link URL', 'slickc_image_url', 'slickc', 'normal', 'low');
 }
 
 function slickc_mb_save_details() {

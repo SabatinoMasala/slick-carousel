@@ -37,7 +37,7 @@ function slickc_post_type() {
 		'has_archive' => true, 
 		'hierarchical' => false,
 		'menu_position' => 21,
-		'supports' => array('title', 'excerpt', 'thumbnail', 'page-attributes'),
+		'supports' => array('title', 'thumbnail', 'page-attributes', 'editor'),
 	); 
 	register_post_type('slickc', $args);
 }
